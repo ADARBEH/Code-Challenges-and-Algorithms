@@ -1,4 +1,3 @@
-
 | **Problem domain** 	| **Visualization** 	| **Big o** 	|
 |---	|---	|---	|
 | Writing a function that takes two arrays of numbers and returns an array of numbers, but is arranged according to the Binary Tree Data Structure 	|<ul><li>[] => return  null</li><li>[one value] => return root is this value</li><li> [values] => return [values as binary Tree] like image</li></ul> <br> ![binary Tree](https://assets.leetcode.com/uploads/2021/02/19/tree.jpg) 	| Calls itself twice per function may have a runtime of O(2^N) 	|
