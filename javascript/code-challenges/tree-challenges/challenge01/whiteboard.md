@@ -1,2 +1,8 @@
-// Add your whiteboard image here
-// Add your whiteboard image here
+
+| **Problem domain** 	| **Visualization** 	| **Big o** 	|
+|---	|---	|---	|
+| Writing a function that takes two arrays of numbers and returns an array of numbers, but is arranged according to the Binary Tree Data Structure 	|<ul><li>[] => return  null</li><li>[one value] => return root is this value</li><li> [values] => return [values as binary Tree] like image</li></ul> <br> ![binary Tree](https://assets.leetcode.com/uploads/2021/02/19/tree.jpg) 	| Calls itself twice per function may have a runtime of O(2^N) 	|
+| **Edge cases** 	| **Algorithm** 	| **Code** 	|
+| <ul><li>Empty array</li><li>Array have one value</li></ul> | 1. Declare a function called test01 that takes to arrays (preorder , inorder) <br>2. Check if arrays empty or have one value then<br> 3.  Create a value called root that take from first element in preorder because is element is a root for binary Tree <br>4. Create a value called moid it will be index of (inorder) <br>5. Now let root.left to be equal Recursion function with new variables by doing for preorder and inorder slice <br>6. Keep loop and return  root 	| const test01 = function(preorder,inorder){<br>  <br>  if(preorder.length === 0 ){<br>        return null;<br>}<br> <br>if(preorder.length === 1){<br>return  new  Node(preorder[0]);<br>}<br> <br>   let root = new Node(preorder[0]);<br>    let mid = inorder.indexOf(preorder[0]);<br><br><br>    root.left = test01(preorder.slice(1,mid+1),inorder.slice(0,mid));<br>    root.right = test01(preorder.slice(mid+1),inorder.slice(mid+1));<br><br><br>    return root;<br>}
+ |
+```
